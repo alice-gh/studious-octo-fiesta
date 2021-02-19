@@ -36,6 +36,9 @@ jobs:
           git config user.email "123xyztest@github.com"
           git config user.name "testing from actions"
           echo " update from actions" >> README.md
-          git add .
-          git commit -m "Update from actions"
+          git add --all .
+          git commit -m "update from actions for: ${GITHUB_SHA}" || true
           git push || true
+#          git add .
+#          git commit -m "Update from actions"
+#          git push || true
